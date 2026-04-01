@@ -6,3 +6,8 @@ def perguntar():
               "<E> - para Excluir usuario\n" +
               "<L> - para Listar usuario\n" +
               "<S> - para Sair\n").upper()
+
+def inserir(dicionario):
+    chave = input("Digite o nome do usuario: ").upper()
+    nome = input("Digite o seu nome: ").upper()
+    nascimento = input("Digite a data de nascimento do usuario (Use: d/m/a): ")
