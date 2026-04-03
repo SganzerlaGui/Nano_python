@@ -1,4 +1,7 @@
 from arquivo import *
+import os
+
+
 #usuarios = {}
 
 #print(usuarios)
@@ -35,28 +38,37 @@ from arquivo import *
 
 usuarios = {}
 
-emails = ["Gsc@gmail.com", "01oi@gmail.com"]
+emails = ["Gsc@gmail.com",]
 
 tupla = list(enumerate(emails))
 
 #------Tupla para retornar mais de 1 valor de 1 metodo
 #--------enumerate vai voltar enumerado: 11,2,3,4,5,6,7......
-#l-------ist concatena a numeração e os gmails em uma tupla
+#l-------list concatena a numeração e os gmails em uma tupla
 
 for chave in range(0, len(tupla)):
     
-    print(f"Email:", tupla[chave][1])
+    #print(f"Email:", tupla[chave][1])
+    novo_email = input("Digite o seu email: ")
+    usuario = input("Digite o seu usuario: ")
     nome = input("Digite o seu nome: ")
     nivel = input("Digite o seu nivel: ")
-    usuarios[tupla[chave][1]] = [nome, nivel]
+    usuarios[tupla[chave][1]] = [nome, nivel, usuario]
+if novo_email in emails:
+    print("Esse email já está cadastrado!!")
+else:
+    emails.append(novo_email)
 
+clean()
 
 for chave, dado in usuarios.items():
    
-    print(f"Usuario......", {chave[0]})
-    print(f"Email......", {chave[1]})
-    print(f"Nome.....", {dado[0]})
-    print(f"Nivel......", {dado[1]})
+    print(f"- Usuario......", {usuarios[chave][2]})
+    print(f"- Email......", {novo_email})
+    print(f"- Nome.....", {nome})
+    print(f"- Nivel......", {nivel})
+
+print(emails)
 
 # ------[chave] -> Escolhe qual usuário da lista estamos acessando (o 1º, o 2º, etc.)
 
