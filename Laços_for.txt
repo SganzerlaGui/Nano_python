@@ -8,6 +8,8 @@
           code
 
 
+O 'i', é onde ficaria a veriavel!!!!!-----------------------------
+
 
 
 O range(start, end) determina qual é o valor de start e qual é o valor de end. O i receberá todos os valores de start até end (não incluindo end) sequencialmente. Por exemplo:
