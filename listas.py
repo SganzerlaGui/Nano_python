@@ -38,6 +38,7 @@ import os
 #--------enumerate vai voltar enumerado: 11,2,3,4,5,6,7......
 #l-------list concatena a numeração e os gmails em uma tupla
 
+<<<<<<< HEAD
 for chave in range(0, len(tupla)):    
     #print(f"Email:", tupla[chave][1])
     novo_email = input("Digite o seu email: ")
@@ -60,6 +61,26 @@ for chave, dado in usuarios.items():
     print(f"- Nivel......", {nivel})
 
 print(emails)
+=======
+#for chave in range(0, len(tupla)):    
+#    #print(f"Email:", tupla[chave][1])
+#    novo_email = input("Digite o seu email: ")
+#    usuario = input("Digite o seu usuario: ")
+#    nome = input("Digite o seu nome: ")
+#    nivel = input("Digite o seu nivel: ")
+#    usuarios[tupla[chave][1]] = [nome, nivel, usuario]
+#if novo_email in emails:
+#    print("Esse email já está cadastrado!!")
+#else:
+#    emails.append(novo_email)
+#clean()
+#for chave, dado in usuarios.items():
+#    print(f"- Usuario......", {usuarios[chave][2]})
+#    print(f"- Email......", {novo_email})
+#    print(f"- Nome.....", {nome})
+#    print(f"- Nivel......", {nivel})
+#print(emails)
+>>>>>>> b84c401 (Versão atualizada)
 
 # ------[chave] -> Escolhe qual usuário da lista estamos acessando (o 1º, o 2º, etc.)
 
@@ -70,10 +91,13 @@ print(emails)
 # --------[1] -> Pega a segunda informação da lista (o Nível)
 
 
+<<<<<<< HEAD
 
 
 from captura import *
 
+=======
+>>>>>>> b84c401 (Versão atualizada)
 usuarios = {}
 
 def menu():
@@ -120,4 +144,8 @@ clean()
 
 nome_da_pessoa = inserir(usuarios) 
 
+<<<<<<< HEAD
 print(f"Acabamos de cadastrar o {nome_da_pessoa}!")
+=======
+print(f"Acabamos de cadastrar o {nome_da_pessoa}!")
+>>>>>>> b84c401 (Versão atualizada)

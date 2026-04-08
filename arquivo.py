@@ -27,6 +27,7 @@ def inserir(usuarios):
     
     print(f"\nUsuário {user_name} salvo com sucesso!")
 
+<<<<<<< HEAD
     salvar(usuarios)
 
 def salvar(usuarios):
@@ -76,4 +77,54 @@ def sair():
     exit()
 
 
+=======
+# Criar um "Banco de dados"
+    salvar(usuarios)
 
+def salvar(usuarios):
+    with open("usuarios.txt", "a") as listas:
+        for chave, dados in usuarios.items():
+            listas.write(chave + ":" + str(dados))
+
+
+
+>>>>>>> b84c401 (Versão atualizada)
+
+def pesquisar(usuarios):
+    chave = input("Digite o ID do usuario que deseja pesquisar: ")
+
+    if chave in usuarios:
+
+        print(f"\nUsuário encontrado!")
+        print(f"Nome: {usuarios[chave]['Nome']}")
+        print(f"Nascimento: {usuarios[chave]['Nascimento']}")
+        print(f"User: {usuarios[chave]['Nome de usuario']}")
+
+    else:
+
+        print(f"\nErro: Usuário '{chave}' não encontrado.")
+
+
+def excluir(usuarios):
+    chave = input("Digite o ID do usuario que deseja excluir: ")
+
+    if chave in usuarios:
+        del usuarios[chave]
+        print(f"\nUsuário excluido com sucesso!")
+    else:
+        print(f"\nErro: Usuário '{chave}' nao encontrado.")
+
+
+def listar(usuarios):
+    if not usuarios:
+        print("\nNenhum usuário cadastrado.")
+
+    else:
+        print("\n--LISTA DE USUARIOS--")
+        for chave, dados in usuarios.items():
+            print(f"ID: {chave} | Nome: {dados['Nome']}")
+
+def sair():
+    print("ENCERRANDO O SISTEMA...")
+    exit()
+# With abre arquivos de forma segura, fechando-os automaticamente ao final do bloco
