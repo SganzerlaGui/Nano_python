@@ -1,6 +1,4 @@
 from arquivo import *
-import os
-
 
 #usuarios = {}
 
@@ -38,30 +36,25 @@ import os
 #--------enumerate vai voltar enumerado: 11,2,3,4,5,6,7......
 #l-------list concatena a numeração e os gmails em uma tupla
 
-<<<<<<< HEAD
-for chave in range(0, len(tupla)):    
-    #print(f"Email:", tupla[chave][1])
-    novo_email = input("Digite o seu email: ")
-    usuario = input("Digite o seu usuario: ")
-    nome = input("Digite o seu nome: ")
-    nivel = input("Digite o seu nivel: ")
-    usuarios[tupla[chave][1]] = [nome, nivel, usuario]
-if novo_email in emails:
-    print("Esse email já está cadastrado!!")
-else:
-    emails.append(novo_email)
+#for chave in range(0, len(tupla)):    
+#    #print(f"Email:", tupla[chave][1])
+#    novo_email = input("Digite o seu email: ")
+#    usuario = input("Digite o seu usuario: ")
+#    nome = input("Digite o seu nome: ")
+#    nivel = input("Digite o seu nivel: ")
+#    usuarios[tupla[chave][1]] = [nome, nivel, usuario]
+#if novo_email in emails:
+#    print("Esse email já está cadastrado!!")
+#else:
+#    emails.append(novo_email)
+#clean()
+#for chave, dado in usuarios.items(): 
+#    print(f"- Usuario......", {usuarios[chave][2]})
+#    print(f"- Email......", {novo_email})
+#    print(f"- Nome.....", {nome})
+#    print(f"- Nivel......", {nivel})
+#print(emails)
 
-clean()
-
-for chave, dado in usuarios.items():
-   
-    print(f"- Usuario......", {usuarios[chave][2]})
-    print(f"- Email......", {novo_email})
-    print(f"- Nome.....", {nome})
-    print(f"- Nivel......", {nivel})
-
-print(emails)
-=======
 #for chave in range(0, len(tupla)):    
 #    #print(f"Email:", tupla[chave][1])
 #    novo_email = input("Digite o seu email: ")
@@ -80,7 +73,7 @@ print(emails)
 #    print(f"- Nome.....", {nome})
 #    print(f"- Nivel......", {nivel})
 #print(emails)
->>>>>>> b84c401 (Versão atualizada)
+
 
 # ------[chave] -> Escolhe qual usuário da lista estamos acessando (o 1º, o 2º, etc.)
 
@@ -90,62 +83,42 @@ print(emails)
 
 # --------[1] -> Pega a segunda informação da lista (o Nível)
 
-
-<<<<<<< HEAD
-
-
-from captura import *
-
-=======
->>>>>>> b84c401 (Versão atualizada)
 usuarios = {}
 
-def menu():
-    print("1 - Inserir usuario\n" +
-          "2 - Pesquisar usuario\n" +
-          "3 - Excluir usuario\n" +
-          "4 - Listar usuarios\n" +
-          "5 - Sair\n")
-    
-    # Chamando a função que está no captura.py
-    return pegar_opcao()
-
-# --- Execução (que volta ao menu após concuido)---
-
 while True:
-    clean()
-    opcao = menu()
+    
+    menu()
+
+    opcao = pegar_opcao()
 
     if opcao == "1":
-        inserir(usuarios)
-        print(usuarios)
-    
+
+        nome_da_pessoa = inserir(usuarios) 
+        print(f"\nAcabamos de cadastrar o(a) {nome_da_pessoa}!")
+
     elif opcao == "2":
+
         pesquisar(usuarios)
     
     elif opcao == "3":
+
         excluir(usuarios)
     
     elif opcao == "4":
+
         listar(usuarios)
     
     elif opcao == "5":
+        
         sair()
-        #break # Quebra o loop e fecha o programa
     
     else:
         print("Opção inválida!")
 
-    # Pausa para o usuário conseguir ler o que aconteceu antes de limpar a tela
+    # Pausa para o usuário conseguir ler o que aconteceu antes de limpar a tela e voltar ao menu
     input("\nPressione ENTER para voltar ao menu...")
-    break
 
-clean()
+    clean()
 
-nome_da_pessoa = inserir(usuarios) 
 
-<<<<<<< HEAD
-print(f"Acabamos de cadastrar o {nome_da_pessoa}!")
-=======
-print(f"Acabamos de cadastrar o {nome_da_pessoa}!")
->>>>>>> b84c401 (Versão atualizada)
+

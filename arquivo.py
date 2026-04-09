@@ -5,11 +5,30 @@ def clean():
     os.system("cls")
 
 # Função para pegar a opção do menu
+
+def menu():
+    
+    clean()
+    
+    print("1 - Inserir usuario\n" +
+         
+          "2 - Pesquisar usuario\n" +
+         
+          "3 - Excluir usuario\n" +
+         
+          "4 - Listar usuarios\n" +
+         
+          "5 - Sair\n")
+
+
 def pegar_opcao():
     return input("Digite a opção desejada: ")
 
 def inserir(usuarios):
     # ATENÇÃO: Todas as linhas abaixo DEVEM ter um TAB (4 espaços) de recuo
+    
+    clean()
+
     user_name = input("Digite o nome do usuario: ").upper().strip()
     nome = input("Digite o seu nome: ").upper().strip()
     nascimento = input("Digite a data de nascimento: ")
@@ -25,100 +44,40 @@ def inserir(usuarios):
     # Esta linha também deve estar recuada (dentro do def)
     usuarios[usuario_id] = dados_pessoa
     
+    # SALVAR NO ARQUIVO LOGO APÓS INSERIR
+    salvar(usuarios)
+    
     print(f"\nUsuário {user_name} salvo com sucesso!")
-
-<<<<<<< HEAD
-    salvar(usuarios)
+    return user_name # Retorna o nome para o print final
 
 def salvar(usuarios):
-    with open("usuarios.txt", "a") as site:
+    # Mudado para 'w' para não duplicar tudo toda vez que salvar
+    with open("usuarios.txt", "w") as site:
         for chave, dados in usuarios.items():
-            site.write(chave + ":" + str(dados))
-
-
-
+            site.write(chave + ":" + str(dados) + "\n")
 
 def pesquisar(usuarios):
     chave = input("Digite o ID do usuario que deseja pesquisar: ")
-
     if chave in usuarios:
-
         print(f"\nUsuário encontrado!")
         print(f"Nome: {usuarios[chave]['Nome']}")
         print(f"Nascimento: {usuarios[chave]['Nascimento']}")
         print(f"User: {usuarios[chave]['Nome de usuario']}")
-
     else:
-
         print(f"\nErro: Usuário '{chave}' não encontrado.")
-
 
 def excluir(usuarios):
     chave = input("Digite o ID do usuario que deseja excluir: ")
-
     if chave in usuarios:
         del usuarios[chave]
+        salvar(usuarios) # Atualiza o arquivo após excluir
         print(f"\nUsuário excluido com sucesso!")
     else:
         print(f"\nErro: Usuário '{chave}' nao encontrado.")
 
-
 def listar(usuarios):
     if not usuarios:
         print("\nNenhum usuário cadastrado.")
-
-    else:
-        print("\n--LISTA DE USUARIOS--")
-        for chave, dados in usuarios.items():
-            print(f"ID: {chave} | Nome: {dados['Nome']}")
-
-def sair():
-    print("ENCERRANDO O SISTEMA...")
-    exit()
-
-
-=======
-# Criar um "Banco de dados"
-    salvar(usuarios)
-
-def salvar(usuarios):
-    with open("usuarios.txt", "a") as listas:
-        for chave, dados in usuarios.items():
-            listas.write(chave + ":" + str(dados))
-
-
-
->>>>>>> b84c401 (Versão atualizada)
-
-def pesquisar(usuarios):
-    chave = input("Digite o ID do usuario que deseja pesquisar: ")
-
-    if chave in usuarios:
-
-        print(f"\nUsuário encontrado!")
-        print(f"Nome: {usuarios[chave]['Nome']}")
-        print(f"Nascimento: {usuarios[chave]['Nascimento']}")
-        print(f"User: {usuarios[chave]['Nome de usuario']}")
-
-    else:
-
-        print(f"\nErro: Usuário '{chave}' não encontrado.")
-
-
-def excluir(usuarios):
-    chave = input("Digite o ID do usuario que deseja excluir: ")
-
-    if chave in usuarios:
-        del usuarios[chave]
-        print(f"\nUsuário excluido com sucesso!")
-    else:
-        print(f"\nErro: Usuário '{chave}' nao encontrado.")
-
-
-def listar(usuarios):
-    if not usuarios:
-        print("\nNenhum usuário cadastrado.")
-
     else:
         print("\n--LISTA DE USUARIOS--")
         for chave, dados in usuarios.items():
