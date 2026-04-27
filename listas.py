@@ -122,3 +122,16 @@ while True:
 
 
 
+# Imprime um retângulo de estrelas 2x3
+#for row in range(2):  # 2 linhas
+#    line = ""
+#    for col in range(3):  # 3 colunas
+#        line += "*"
+#    print(line)
+#-----------------------------------------------
+# Saída:
+# ***
+# ***
+
+
+
