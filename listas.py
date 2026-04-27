@@ -130,6 +130,22 @@ while True:
 #    print(line)
 #-----------------------------------------------
 # Saída:
+
+
+
+# get input for rows and columns
+#rows = int(input())
+#cols = int(input())
+
+# Write your nested loops here
+# Outer loop for rows
+# Inner loop for columns
+
+#for i in range(rows):
+#   line = ""
+#    for j in range(cols):
+#            line += "*"#
+#print(line)   
 # ***
 # ***
 
